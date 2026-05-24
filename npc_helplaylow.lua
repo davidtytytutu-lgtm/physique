@@ -24,7 +24,7 @@ local IsValid = IsValid
 if SERVER then -- SERVER --
 
 local npc_helplaylow_acquire_distance =
-	CreateConVar("npc_helplaylow_acquire_distance", 2500, FCVAR_NONE,
+	CreateConVar("npc_helplaylow_acquire_distance", 999999, FCVAR_NONE,
 	"The maximum distance at which helplaylow will chase a target.")
 
 local npc_helplaylow_spawn_protect =
@@ -400,7 +400,7 @@ function ENT:Initialize()
 	self.loco:SetDeathDropHeight(600)
 
 	-- In Sandbox, players are faster in singleplayer.
-	self.loco:SetDesiredSpeed(game.SinglePlayer() and 650 or 500)
+	self.loco:SetDesiredSpeed(game.SinglePlayer() and 900 or 800)
 
 	-- Take corners a bit sharp.
 	self.loco:SetAcceleration(500)
@@ -624,7 +624,7 @@ function ENT:ClaimHidingSpot(hidingSpot)
 	return true
 end
 
-local HIGH_JUMP_HEIGHT = 500
+local HIGH_JUMP_HEIGHT = 800
 function ENT:AthelplaylowtJumpAtTarget()
 	-- No double-jumping.
 	if not self:IsOnGround() then return end
@@ -846,11 +846,11 @@ local npc_helplaylow_music_volume =
 local MUSIC_RESTART_DELAY = 2
 
 -- Beyond this distance, helplaylows do not count to music volume.
-local MUSIC_CUTOFF_DISTANCE = 1000
+local MUSIC_CUTOFF_DISTANCE = 1500
 
 -- Max volume is achieved when MUSIC_helplaylow_PANIC_COUNT helplaylows are this close,
 -- or an equivalent score.
-local MUSIC_PANIC_DISTANCE = 200
+local MUSIC_PANIC_DISTANCE = 500
 
  -- That's a lot of helplaylow.
 local MUSIC_helplaylow_PANIC_COUNT = 8
