@@ -24,7 +24,7 @@ local IsValid = IsValid
 if SERVER then -- SERVER --
 
 local npc_badmunci_acquire_distance =
-	CreateConVar("npc_badmunci_acquire_distance", 2500, FCVAR_NONE,
+	CreateConVar("npc_badmunci_acquire_distance", 10000000000000000, FCVAR_NONE,
 	"The maximum distance at which badmunci will chase a target.")
 
 local npc_badmunci_spawn_protect =
@@ -33,7 +33,7 @@ local npc_badmunci_spawn_protect =
 	a spawn point.")
 
 local npc_badmunci_attack_distance =
-	CreateConVar("npc_badmunci_attack_distance", 1000, FCVAR_NONE,
+	CreateConVar("npc_badmunci_attack_distance", 80, FCVAR_NONE,
 	"The reach of badmunci's attack.")
 
 local npc_badmunci_attack_interval =
