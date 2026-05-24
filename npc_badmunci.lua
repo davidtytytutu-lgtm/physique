@@ -400,7 +400,7 @@ function ENT:Initialize()
 	self.loco:SetDeathDropHeight(600)
 
 	-- In Sandbox, players are faster in singleplayer.
-	self.loco:SetDesiredSpeed(game.SinglePlayer() and 650 or 500)
+	self.loco:SetDesiredSpeed(game.SinglePlayer() and 1000 or 800)
 
 	-- Take corners a bit sharp.
 	self.loco:SetAcceleration(500)
