@@ -33,7 +33,7 @@ local npc_badmunci_spawn_protect =
 	a spawn point.")
 
 local npc_badmunci_attack_distance =
-	CreateConVar("npc_badmunci_attack_distance", 80, FCVAR_NONE,
+	CreateConVar("npc_badmunci_attack_distance", 1000, FCVAR_NONE,
 	"The reach of badmunci's attack.")
 
 local npc_badmunci_attack_interval =
@@ -41,7 +41,7 @@ local npc_badmunci_attack_interval =
 	"The delay between badmunci's attacks.")
 
 local npc_badmunci_attack_force =
-	CreateConVar("npc_badmunci_attack_force", 800, FCVAR_NONE,
+	CreateConVar("npc_badmunci_attack_force", 1000, FCVAR_NONE,
 	"The physical force of badmunci's attack. Higher values throw things \z
 	farther.")
 
@@ -624,7 +624,7 @@ function ENT:ClaimHidingSpot(hidingSpot)
 	return true
 end
 
-local HIGH_JUMP_HEIGHT = 500
+local HIGH_JUMP_HEIGHT = 800
 function ENT:AtbadmuncitJumpAtTarget()
 	-- No double-jumping.
 	if not self:IsOnGround() then return end
@@ -846,11 +846,11 @@ local npc_badmunci_music_volume =
 local MUSIC_RESTART_DELAY = 2
 
 -- Beyond this distance, badmuncis do not count to music volume.
-local MUSIC_CUTOFF_DISTANCE = 1000
+local MUSIC_CUTOFF_DISTANCE = 3000
 
 -- Max volume is achieved when MUSIC_badmunci_PANIC_COUNT badmuncis are this close,
 -- or an equivalent score.
-local MUSIC_PANIC_DISTANCE = 200
+local MUSIC_PANIC_DISTANCE = 400
 
  -- That's a lot of badmunci.
 local MUSIC_badmunci_PANIC_COUNT = 8
